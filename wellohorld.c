@@ -2,49 +2,47 @@
 
 #define BIGNUMBER 999999
 
-enum Race {
+typedef enum {
 	BLACK,
 	WHITE,
 	ASIAN,
 	HISPANIC,
 	PACIFIC,
 	JEWISH
-};
+} Race;
 
-enum Location {
+typedef enum {
 	HERE,
 	THERE,
 	BACK,
 	NORWAY,
 	DEAD
-};
+} Location;
 
-struct dicks
-{
+typedef struct {
 	int monies;
 	char* name;
 	int debt;
-	enum Race race;
-};
+	Race race;
+} dicks;
 
-struct Person
-{
+typedef struct {
 	char* name;
 	int age;
-	struct dicks dick;
-	enum Location location;
-};
+	dicks dick;
+	Location location;
+} Person;
 
 
-void increaseMonies(struct dicks dick, int monies) {
+void increaseMonies(dicks dick, int monies) {
 	dick.monies += monies;
 }
 
-void decreaseMonies(struct dicks dick, int monies) {
+void decreaseMonies(dicks dick, int monies) {
 	dick.monies -= monies;
 }
 
-void bringBackTheGirlAndWipeAwayTheDebt(struct dicks* dick,enum Race race,struct Person Elizabeth,struct Person Lutece,struct Person Booker)
+void bringBackTheGirlAndWipeAwayTheDebt(dicks* dick,Race race,Person Elizabeth,Person Lutece,Person Booker)
 {
 	dick->monies = 0;
 	dick->debt = 0;
@@ -70,9 +68,9 @@ int main(int argc, char const *argv[])
 	gogogadgetgo("HELLO GOOBY!");
 	gogogadgetgo("BioShock Infinite (C) 2K Games Inc. 2014");
 	gogogadgetgo("Making a Booker");
-	struct Person booker;
-	struct Person elizabeth;
-	struct Person lutece;
+	Person booker;
+	Person elizabeth;
+	Person lutece;
 	gogogadgetgo("Giving debt.");
 	booker.dick.debt = BIGNUMBER;
 	elizabeth.location = THERE;
